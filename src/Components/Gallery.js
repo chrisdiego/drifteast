@@ -10,19 +10,6 @@ class Gallery extends Component {
     			<PhotosHeading photosDate="10/16/17" photosLocation="Burlington" />
     		</div>
     		<div className="row photo-row">
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    		</div>
-    		<div className="row photo-row">
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    		</div>
-    		<div className="row photo-row">
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
-    			<Photo photoSource="http://d2kyiw4dkbd8xj.cloudfront.net/6.jpg" />
     		</div>
     	</div>
     );
