@@ -5,9 +5,6 @@ var router = express.Router();
 // Load the SDK for JavaScript
 var AWS = require('aws-sdk');
 
-// Load credentials and set region from JSON file
-AWS.config.loadFromPath('./config.json');
-
 // Create S3 service object
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
@@ -18,15 +15,24 @@ var params = {
  Prefix: 'images/'
 }
 
-// Call S3 to list all images
-s3.listObjectsV2(params, function(err, data) {
-   if (err) console.log(err, err.stack); // an error occurred
-   else     console.log(data);           // successful response
-});
-
-/* GET users listing. */
-router.get('/media', function(req, res, next) {
-   res.json(s3.listObjectsV2);
+/* GET all images. */
+router.get('/', function(req, res, next) {
+	if (err) {
+            console.log(err, err.stack); // an error occurred
+        }
+    else {
+			var allKeys = []
+		   s3.listObjectsV2(params, function(err, data) {
+		   if (err) console.log(err, err.stack); // an error occurred
+		   else {
+		   	var contents = data.Contents;
+	            contents.forEach(function (content) {
+	                allKeys.push(content.Key);
+	            });
+		   }     
+		   res.send(allKeys);           // successful response
+		});
+	}
 });
 
 module.exports = router;
